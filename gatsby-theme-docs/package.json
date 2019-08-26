@@ -1,0 +1,35 @@
+{
+  "name": "gatsby-theme-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.13.82",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "gatsby": "^2.13.82",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.16",
+    "@emotion/styled": "^10.0.15",
+    "@mdx-js/mdx": "^1.3.2",
+    "@mdx-js/react": "^1.3.2",
+    "gatsby-plugin-emotion": "^4.1.4",
+    "gatsby-plugin-mdx": "^1.0.31",
+    "gatsby-plugin-react-helmet": "^3.1.5",
+    "gatsby-plugin-theme-ui": "^0.2.34",
+    "gatsby-source-filesystem": "^2.1.18",
+    "gatsby-transformer-remark": "^2.6.19",
+    "react-helmet": "^5.2.1",
+    "theme-ui": "^0.2.36"
+  }
+}
