@@ -12,6 +12,8 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`]
       }
-    }
+    },
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-theme-ui"
   ]
 };
