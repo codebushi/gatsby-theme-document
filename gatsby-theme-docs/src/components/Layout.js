@@ -1,46 +1,34 @@
 import { Global } from "@emotion/core";
 import styled from "@emotion/styled";
 import React from "react";
-import { ThemeProvider, useColorMode } from "theme-ui";
-import theme from "../gatsby-plugin-theme-ui";
-import colors from "../gatsby-plugin-theme-ui/colors";
+import { useColorMode } from "theme-ui";
 import { globalStyles } from "../styles";
-import mediaqueries from "../styles/media";
+
+const modes = ["light", "black", "dark", "deep", "hack", "pink"];
 
 const Layout = ({ children }) => {
-  const [colorMode] = useColorMode();
-  let finalTheme = theme;
+  const [colorMode, setColorMode] = useColorMode();
 
-  console.log(colorMode);
-
-  if (colorMode === "dark") {
-    finalTheme = Object.assign({}, theme, { colors: colors.modes[colorMode] });
-  }
+  const cycleColorMode = e => {
+    const i = modes.indexOf(colorMode);
+    const n = (i + 1) % modes.length;
+    setColorMode(modes[n]);
+  };
 
   return (
-    <ThemeProvider theme={finalTheme}>
+    <Container>
       <Global styles={globalStyles} />
-      <FooterContainer>{children}</FooterContainer>
-    </ThemeProvider>
+      <button onClick={cycleColorMode}>Toggle Color</button>
+      {children}
+    </Container>
   );
 };
 
-export default Layout;
-
-const FooterContainer = styled.div`
+const Container = styled.div`
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 80px;
-  color: ${p => p.theme.colors.grey};
-
-  ${mediaqueries.tablet`
-    flex-direction: column;
-    padding-bottom: 100px;
-  `}
-
-  ${mediaqueries.phablet`
-    padding-bottom: 50px;
-  `}
+  background: ${p => p.theme.colors.background};
+  transition: background 0.25s var(--ease-in-out-quad);
+  min-height: 100vh;
 `;
+
+export default Layout;
