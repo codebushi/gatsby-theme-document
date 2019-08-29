@@ -1,3 +1,4 @@
-import { globalStyles } from "./global";
+import globalStyles from './global';
+import { media } from './media';
 
-export { globalStyles };
+export { globalStyles, media };

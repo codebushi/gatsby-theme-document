@@ -1,34 +1,35 @@
-import { Global } from "@emotion/core";
-import styled from "@emotion/styled";
-import React from "react";
-import { useColorMode } from "theme-ui";
-import { globalStyles } from "../styles";
-
-const modes = ["light", "black", "dark", "deep", "hack", "pink"];
+import { Global } from '@emotion/core';
+import styled from '@emotion/styled';
+import React from 'react';
+import { Styled } from 'theme-ui';
+import { globalStyles } from '../styles';
+import LeftSidebar from './LeftSidebar';
+import RightSidebar from './RightSidebar';
 
 const Layout = ({ children }) => {
-  const [colorMode, setColorMode] = useColorMode();
-
-  const cycleColorMode = e => {
-    const i = modes.indexOf(colorMode);
-    const n = (i + 1) % modes.length;
-    setColorMode(modes[n]);
-  };
-
   return (
-    <Container>
-      <Global styles={globalStyles} />
-      <button onClick={cycleColorMode}>Toggle Color</button>
-      {children}
-    </Container>
+    <Styled.root>
+      <SiteWrapper>
+        <Global styles={globalStyles} />
+        <LeftSidebar />
+        <SiteContent>{children}</SiteContent>
+        <RightSidebar />
+      </SiteWrapper>
+    </Styled.root>
   );
 };
 
-const Container = styled.div`
-  position: relative;
+const SiteWrapper = styled.div`
+  display: flex;
   background: ${p => p.theme.colors.background};
   transition: background 0.25s var(--ease-in-out-quad);
   min-height: 100vh;
+`;
+
+const SiteContent = styled.main`
+  flex-grow: 1;
+  min-width: 20rem;
+  padding: 2rem 1rem;
 `;
 
 export default Layout;

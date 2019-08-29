@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `content`,
         name: `content`
@@ -13,7 +13,7 @@ module.exports = {
         extensions: [`.mdx`, `.md`]
       }
     },
-    "gatsby-plugin-emotion",
-    "gatsby-plugin-theme-ui"
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-theme-ui'
   ]
 };

@@ -1,6 +1,6 @@
-import { css } from "@emotion/core";
+import { css } from '@emotion/core';
 
-export const globalStyles = css`
+const globalStyles = css`
   /**
    * Thanks to Benjamin De Cock
    * https://gist.github.com/bendc/ac03faac0bf2aee25b49e5fd260a727d
@@ -20,7 +20,13 @@ export const globalStyles = css`
     box-sizing: inherit;
   }
 
+  :root {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
   }
 `;
+
+export default globalStyles;

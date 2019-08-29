@@ -1,7 +1,7 @@
-import { css } from "@emotion/core";
-import theme from "../gatsby-plugin-theme-ui";
+import { css } from '@emotion/core';
+import theme from '../gatsby-plugin-theme-ui';
 
-const toEm = size => size / 16 + "em";
+const toEm = size => `${size / 16}em`;
 
 /**
  * All breakpoints can be found inside of theme.breakpoints.
