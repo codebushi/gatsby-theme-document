@@ -35,6 +35,4 @@ const mediaqueries = theme.breakpoints.reduce(
   {}
 );
 
-export const media = mediaqueries;
-
 export default mediaqueries;

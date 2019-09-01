@@ -1,20 +1,40 @@
 import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 import React from 'react';
+import mediaqueries from '../styles/media';
 
-const RightSidebar = () => {
+function createItems(items, location) {
+  return (
+    items &&
+    items.map(item => (
+      <li key={location.pathname + item.url}>
+        <Link to={location.pathname + item.url}>{item.title}</Link>
+        {item.items && <ul>{createItems(item.items, location)}</ul>}
+      </li>
+    ))
+  );
+}
+
+const RightSidebar = ({ tableOfContents, location }) => {
+  const cool = createItems(tableOfContents.items, location);
+
   return (
     <RightSidebarWrapper>
       <RightSidebarNav>
         <RightSidebarTitle>Contents</RightSidebarTitle>
-        hello again!
+        {cool}
       </RightSidebarNav>
     </RightSidebarWrapper>
   );
 };
 
 const RightSidebarWrapper = styled.aside`
+  display: none;
   flex: 0 0 16rem;
   font-size: 0.75rem;
+  ${mediaqueries.desktop_medium_up`
+    display: block
+  `};
 `;
 
 const RightSidebarNav = styled.nav`

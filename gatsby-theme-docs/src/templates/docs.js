@@ -11,7 +11,7 @@ const {
   sidebar: { forcedNavOrder }
 } = config;
 
-const DocsTemplate = ({ data }) => {
+const DocsTemplate = ({ data, location }) => {
   const { allMdx, mdx } = data;
   const navItems = allMdx.edges
     .map(({ node }) => node.fields.slug)
@@ -47,7 +47,7 @@ const DocsTemplate = ({ data }) => {
     });
 
   return (
-    <Layout>
+    <Layout tableOfContents={mdx.tableOfContents} location={location}>
       <SEO title={mdx.frontmatter.title} description={mdx.frontmatter.description} />
       <h1>{mdx.frontmatter.title}</h1>
       <MDXRenderer>{mdx.body}</MDXRenderer>
@@ -60,7 +60,8 @@ DocsTemplate.propTypes = {
   data: PropTypes.shape({
     mdx: PropTypes.object.isRequired,
     allMdx: PropTypes.object.isRequired
-  }).isRequired
+  }).isRequired,
+  location: PropTypes.object.isRequired
 };
 
 export const pageQuery = graphql`

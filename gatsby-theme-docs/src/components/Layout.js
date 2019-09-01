@@ -7,14 +7,14 @@ import { globalStyles } from '../styles';
 import LeftSidebar from './LeftSidebar';
 import RightSidebar from './RightSidebar';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, tableOfContents, location }) => {
   return (
     <Styled.root>
       <SiteWrapper>
         <Global styles={globalStyles} />
         <LeftSidebar />
         <SiteContent>{children}</SiteContent>
-        <RightSidebar />
+        <RightSidebar tableOfContents={tableOfContents} location={location} />
       </SiteWrapper>
     </Styled.root>
   );
@@ -30,11 +30,13 @@ const SiteWrapper = styled.div`
 const SiteContent = styled.main`
   flex-grow: 1;
   min-width: 20rem;
-  padding: 2rem 2rem;
+  padding: 2rem 3rem;
 `;
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  tableOfContents: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 };
 
 export default Layout;

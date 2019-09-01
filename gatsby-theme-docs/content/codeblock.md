@@ -5,6 +5,8 @@ description: 'This is the meta description for this page'
 
 Hello, world! This is a demo post for `gatsby-theme-docs`. Docs is built by [Code Bushi](https://codebushi.com).
 
+# This is a primary heading 11
+
 In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
 In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
 In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
