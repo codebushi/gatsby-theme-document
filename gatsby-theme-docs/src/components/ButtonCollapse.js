@@ -8,9 +8,10 @@ const ButtonCollapse = ({ onClick, isCollapsed }) => {
 
 const ButtonCollapseStyled = styled.button`
   position: absolute;
-  top: 3px;
-  right: 5px;
-  padding: 0.4rem 0.6rem;
+  top: 0;
+  right: 0;
+  padding: 0 0.8rem;
+  height: 37px;
   background: none;
   border: 0;
   color: ${p => p.theme.colors.text};

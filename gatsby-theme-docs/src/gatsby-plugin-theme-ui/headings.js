@@ -1,7 +1,9 @@
 const headingBase = {
   fontFamily: 'heading',
   lineHeight: 'heading',
-  fontWeight: 'heading'
+  fontWeight: 'heading',
+  mt: 4,
+  mb: 3
 };
 
 export default {

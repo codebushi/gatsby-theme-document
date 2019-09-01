@@ -6,13 +6,15 @@ const Button = ({ children, onClick }) => {
 };
 
 const ButtonStyled = styled.button`
-  padding: 0.3rem 0.75rem;
+  padding: 0.5rem 0.7rem;
   background: none;
-  border: 2px solid #000;
+  border: 2px solid ${p => p.theme.colors.text};
+  color: ${p => p.theme.colors.text};
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   &:hover {
-    background: #fff;
+    border-color: ${p => p.theme.colors.primary};
+    color: ${p => p.theme.colors.primary};
   }
 `;
 

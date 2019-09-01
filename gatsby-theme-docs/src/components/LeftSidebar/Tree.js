@@ -28,7 +28,7 @@ const calculateTreeData = edges => {
       const parts = slug.split('/');
       let { items: prevItems } = accu;
       for (const part of parts.slice(1, -1)) {
-        let tmp = prevItems.find(({ label }) => label == part);
+        let tmp = prevItems.find(({ label }) => label === part);
         if (tmp) {
           if (!tmp.items) {
             tmp.items = [];
@@ -64,7 +64,7 @@ const calculateTreeData = edges => {
     const parts = slug.split('/');
     let { items: prevItems } = accu;
     for (const part of parts.slice(1, -1)) {
-      let tmp = prevItems.find(({ label }) => label == part);
+      let tmp = prevItems.find(({ label }) => label === part);
       if (tmp) {
         if (!tmp.items) {
           tmp.items = [];
@@ -76,7 +76,7 @@ const calculateTreeData = edges => {
       prevItems = tmp.items;
     }
     // sort items alphabetically.
-    prevItems.map(item => {
+    prevItems.forEach(item => {
       item.items = item.items.sort(function(a, b) {
         if (a.label < b.label) return -1;
         if (a.label > b.label) return 1;

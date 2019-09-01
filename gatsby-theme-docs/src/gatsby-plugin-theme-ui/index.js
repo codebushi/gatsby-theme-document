@@ -1,3 +1,4 @@
+import nightOwl from '@theme-ui/prism/presets/night-owl.json';
 import colors from './colors';
 import headings from './headings';
 
@@ -18,7 +19,7 @@ export default {
   },
   lineHeights: {
     body: 1.5,
-    heading: 1.125
+    heading: 1.5
   },
   letterSpacings: {
     body: 'normal',
@@ -41,16 +42,32 @@ export default {
       ...headings
     },
     ...headings,
-    pre: {
-      fontFamily: 'monospace',
-      overflowX: 'auto',
-      code: {
-        color: 'inherit'
+    p: {
+      my: 4
+    },
+    a: {
+      color: 'secondary',
+      ':hover,:focus': {
+        color: 'secondary'
       }
     },
-    code: {
-      fontFamily: 'monospace',
-      fontSize: 'inherit'
+    pre: {
+      ...nightOwl,
+      fontFamily: `"Operator Mono", monospace`,
+      fontSize: '0.9rem',
+      tabSize: 4,
+      hyphens: `none`,
+      overflow: `auto`,
+      borderRadius: 6,
+      p: 3,
+      my: 4
+    },
+    inlineCode: {
+      color: `primary`,
+      background: `rgba(233, 218, 172, 0.2)`,
+      borderRadius: 3,
+      px: `0.4rem`,
+      py: `0.2rem`
     },
     table: {
       width: '100%',

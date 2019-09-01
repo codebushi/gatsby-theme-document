@@ -8,13 +8,13 @@ import Helmet from 'react-helmet';
  * https://themeteorchef.com/tutorials/reusable-seo-with-react-helmet.
  *
  * A great tutorial explaining how to setup a robust version of an
- * Seo friendly react-helmet instance.
+ * SEO friendly react-helmet instance.
  *
  *
- * Use the Helmt on pages to generate Seo and meta content!
+ * Use the Helmt on pages to generate SEO and meta content!
  *
  * Usage:
- * <Seo
+ * <SEO
  *   title={title}
  *   description={description}
  *   image={image}
@@ -42,7 +42,7 @@ const seoQuery = graphql`
   }
 `;
 
-const Seo = ({ title, description, url, image, published, pathname, timeToRead }) => {
+const SEO = ({ title, description, url, image, published, pathname, timeToRead }) => {
   const results = useStaticQuery(seoQuery);
   const site = results.allSite.edges[0].node.siteMetadata;
   const twitter = site.social.find(option => option.name === 'twitter') || {};
@@ -112,7 +112,7 @@ const Seo = ({ title, description, url, image, published, pathname, timeToRead }
   );
 };
 
-Seo.propTypes = {
+SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   url: PropTypes.string,
@@ -122,7 +122,7 @@ Seo.propTypes = {
   timeToRead: PropTypes.string
 };
 
-Seo.defaultProps = {
+SEO.defaultProps = {
   title: '',
   description: '',
   url: '',
@@ -132,4 +132,4 @@ Seo.defaultProps = {
   timeToRead: null
 };
 
-export default Seo;
+export default SEO;

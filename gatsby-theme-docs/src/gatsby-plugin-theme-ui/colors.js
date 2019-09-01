@@ -1,8 +1,8 @@
 export default {
   text: '#000',
   background: '#fff',
-  primary: 'hsl(171, 100%, 41%)',
   secondary: 'hsl(217, 71%, 53%)',
+  primary: '#e63b19',
   accent: 'hsl(204, 86%, 53%)',
   muted: '#f9f9fc',
   gray: '#555',
@@ -12,13 +12,13 @@ export default {
     dark: {
       text: '#fff',
       background: 'hsl(180, 5%, 15%)',
-      primary: 'hsl(171, 100%, 41%)',
-      secondary: 'hsl(217, 71%, 53%)',
-      accent: '#e0f',
+      primary: '#e0f',
+      secondary: 'hsl(171, 100%, 41%)',
+      accent: 'hsl(217, 71%, 53%)',
       muted: 'hsl(180, 5%, 5%)',
       gray: 'hsl(180, 0%, 70%)',
-      sidebar: '#444',
-      sidebarHover: '#333'
+      sidebar: '#333',
+      sidebarHover: '#444'
     }
     // black: {
     //   text: '#fff',

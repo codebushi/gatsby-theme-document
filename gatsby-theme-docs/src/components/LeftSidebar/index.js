@@ -29,9 +29,9 @@ const LeftSidebar = () => {
         <LeftSidebarList>
           <Tree edges={edges} />
         </LeftSidebarList>
-        <p style={{ textAlign: 'center' }}>
+        <p style={{ textAlign: 'center', marginTop: '1.5rem' }}>
           <Button type="button" onClick={cycleColorMode}>
-            cycle color
+            Change Theme
           </Button>
         </p>
       </LeftSidebarNav>

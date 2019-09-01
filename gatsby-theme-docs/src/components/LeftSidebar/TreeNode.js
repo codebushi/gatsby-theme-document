@@ -57,7 +57,7 @@ const TreeSublist = styled.ul`
   padding: 0;
   margin: 0 0 0 1.2rem;
   list-style: none;
-  border-left: 2px solid ${p => p.theme.colors.text};
+  border-left: 1px solid ${p => p.theme.colors.text};
 `;
 
 const TreeLink = styled(Link)`
@@ -71,7 +71,7 @@ const TreeLink = styled(Link)`
     background: ${p => p.theme.colors.sidebarHover};
   }
   &.is-active {
-    color: ${p => p.theme.colors.accent};
+    color: ${p => p.theme.colors.primary};
   }
 `;
 

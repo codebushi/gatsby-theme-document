@@ -5,7 +5,7 @@ import React from 'react';
 import config from '../../config';
 import Layout from '../components/Layout';
 import NextPrevious from '../components/NextPrevious';
-import Seo from '../components/Seo';
+import SEO from '../components/SEO';
 
 const {
   sidebar: { forcedNavOrder }
@@ -48,7 +48,7 @@ const DocsTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title={mdx.frontmatter.title} description={mdx.frontmatter.description} />
+      <SEO title={mdx.frontmatter.title} description={mdx.frontmatter.description} />
       <h1>{mdx.frontmatter.title}</h1>
       <MDXRenderer>{mdx.body}</MDXRenderer>
       <NextPrevious mdx={mdx} nav={nav} />
