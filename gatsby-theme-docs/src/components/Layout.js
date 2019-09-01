@@ -1,5 +1,6 @@
 import { Global } from '@emotion/core';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Styled } from 'theme-ui';
 import { globalStyles } from '../styles';
@@ -29,7 +30,11 @@ const SiteWrapper = styled.div`
 const SiteContent = styled.main`
   flex-grow: 1;
   min-width: 20rem;
-  padding: 2rem 1rem;
+  padding: 2rem 2rem;
 `;
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired
+};
 
 export default Layout;

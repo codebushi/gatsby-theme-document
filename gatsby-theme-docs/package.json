@@ -30,6 +30,7 @@
     "gatsby-source-filesystem": "^2.1.18",
     "gatsby-transformer-remark": "^2.6.19",
     "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
     "react-helmet": "^5.2.1",
     "theme-ui": "^0.2.36"
   }

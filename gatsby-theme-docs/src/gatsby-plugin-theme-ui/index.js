@@ -1,44 +1,13 @@
 import colors from './colors';
-
-const headingBase = {
-  fontFamily: 'heading',
-  lineHeight: 'heading',
-  fontWeight: 'heading'
-};
-
-const headings = {
-  h1: {
-    ...headingBase,
-    fontSize: 5
-  },
-  h2: {
-    ...headingBase,
-    fontSize: 4
-  },
-  h3: {
-    ...headingBase,
-    fontSize: 3
-  },
-  h4: {
-    ...headingBase,
-    fontSize: 2
-  },
-  h5: {
-    ...headingBase,
-    fontSize: 1
-  },
-  h6: {
-    ...headingBase,
-    fontSize: 0
-  }
-};
+import headings from './headings';
 
 export default {
   initialColorMode: `light`,
   colors,
   fonts: {
-    body: 'system-ui, sans-serif',
-    heading: 'Georgia, serif',
+    body:
+      '-apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif',
+    heading: 'Merriweather, Georgia, serif',
     monospace: 'Menlo, monospace'
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
@@ -68,8 +37,8 @@ export default {
     root: {
       fontFamily: 'body',
       lineHeight: 'body',
-      fontWeight: 'body'
-      // ...headings
+      fontWeight: 'body',
+      ...headings
     },
     ...headings,
     pre: {

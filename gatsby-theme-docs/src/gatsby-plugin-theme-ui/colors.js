@@ -1,22 +1,24 @@
 export default {
   text: '#000',
   background: '#fff',
-  primary: 'hsl(240, 100%, 57%)',
-  secondary: 'hsl(260, 100%, 57%)',
-  accent: 'hsl(280, 100%, 57%)',
+  primary: 'hsl(171, 100%, 41%)',
+  secondary: 'hsl(217, 71%, 53%)',
+  accent: 'hsl(204, 86%, 53%)',
   muted: '#f9f9fc',
   gray: '#555',
   sidebar: '#eee',
+  sidebarHover: '#ddd',
   modes: {
     dark: {
       text: '#fff',
       background: 'hsl(180, 5%, 15%)',
-      primary: 'hsl(180, 100%, 57%)',
-      secondary: 'hsl(50, 100%, 57%)',
-      accent: 'hsl(310, 100%, 57%)',
+      primary: 'hsl(171, 100%, 41%)',
+      secondary: 'hsl(217, 71%, 53%)',
+      accent: '#e0f',
       muted: 'hsl(180, 5%, 5%)',
       gray: 'hsl(180, 0%, 70%)',
-      sidebar: '#444'
+      sidebar: '#444',
+      sidebarHover: '#333'
     }
     // black: {
     //   text: '#fff',

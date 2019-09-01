@@ -4,7 +4,10 @@ import React from 'react';
 const RightSidebar = () => {
   return (
     <RightSidebarWrapper>
-      <RightSidebarNav>hello again!</RightSidebarNav>
+      <RightSidebarNav>
+        <RightSidebarTitle>Contents</RightSidebarTitle>
+        hello again!
+      </RightSidebarNav>
     </RightSidebarWrapper>
   );
 };
@@ -23,6 +26,13 @@ const RightSidebarNav = styled.nav`
   width: 16rem;
   height: 100%;
   padding: 2rem 1rem;
+`;
+
+const RightSidebarTitle = styled.p`
+  margin-top: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
 `;
 
 export default RightSidebar;
