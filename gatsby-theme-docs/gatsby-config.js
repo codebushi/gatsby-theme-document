@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Novela by Narative`,
-    name: `Narative`,
-    siteUrl: `https://novela.narative.co`,
+    title: `Docs by Code Bushi`,
+    name: `Code Bushi`,
+    siteUrl: `https://codebushi.com`,
     description: `This is my description that will be used in the meta tags and important for search results`,
     social: [
       {
@@ -38,9 +38,25 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [`.mdx`, `.md`]
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600
+            }
+          },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              icon: false
+            }
+          },
+          `gatsby-remark-embed-video`
+        ]
       }
     },
+    `gatsby-plugin-sharp`,
     'gatsby-plugin-emotion',
     'gatsby-plugin-theme-ui'
   ]

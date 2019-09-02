@@ -67,7 +67,8 @@ const TreeLink = styled(Link)`
   color: ${p => p.theme.colors.text};
   font-weight: 600;
   text-decoration: none;
-  &:hover {
+  &:hover,
+  &:focus {
     background: ${p => p.theme.colors.sidebarHover};
   }
   &.is-active {

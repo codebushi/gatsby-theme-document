@@ -1,14 +1,15 @@
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import React from 'react';
 import mediaqueries from '../styles/media';
+import ListItem from './ListItem';
 
 function createItems(items, location) {
   return (
     items &&
     items.map(item => (
-      <li key={location.pathname + item.url}>
-        <Link to={location.pathname + item.url}>{item.title}</Link>
+      <li key={location.pathname + item.url} style={{ margin: '0.2rem 0' }}>
+        <ListItem location={location} item={item} />
         {item.items && <ul>{createItems(item.items, location)}</ul>}
       </li>
     ))
@@ -16,13 +17,13 @@ function createItems(items, location) {
 }
 
 const RightSidebar = ({ tableOfContents, location }) => {
-  const cool = createItems(tableOfContents.items, location);
+  const contentLinks = createItems(tableOfContents.items, location);
 
   return (
     <RightSidebarWrapper>
       <RightSidebarNav>
         <RightSidebarTitle>Contents</RightSidebarTitle>
-        {cool}
+        <RightSidebarList>{contentLinks}</RightSidebarList>
       </RightSidebarNav>
     </RightSidebarWrapper>
   );
@@ -54,5 +55,21 @@ const RightSidebarTitle = styled.p`
   font-weight: 700;
   text-transform: uppercase;
 `;
+
+const RightSidebarList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  & ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+`;
+
+RightSidebar.propTypes = {
+  tableOfContents: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
+};
 
 export default RightSidebar;
