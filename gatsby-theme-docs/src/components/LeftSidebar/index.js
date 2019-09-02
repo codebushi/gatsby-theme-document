@@ -1,11 +1,14 @@
 import styled from '@emotion/styled';
 import { graphql, useStaticQuery } from 'gatsby';
+import PropTypes from 'prop-types';
 import React from 'react';
 import useCycleColor from '../../hooks/useCycleColor';
+import ToggleOpen from '../../icons/ToggleOpen';
+import mediaqueries from '../../styles/media';
 import Button from '../Button';
 import Tree from './Tree';
 
-const LeftSidebar = () => {
+const LeftSidebar = ({ navOpen }) => {
   const { cycleColorMode } = useCycleColor();
   const {
     allMdx: { edges }
@@ -25,13 +28,13 @@ const LeftSidebar = () => {
   `);
   return (
     <LeftSidebarWrapper>
-      <LeftSidebarNav>
+      <LeftSidebarNav navOpen={navOpen}>
         <LeftSidebarList>
           <Tree edges={edges} />
         </LeftSidebarList>
         <p style={{ textAlign: 'center', marginTop: '1.5rem' }}>
           <Button type="button" onClick={cycleColorMode}>
-            Change Theme
+            <ToggleOpen fill="#000" />
           </Button>
         </p>
       </LeftSidebarNav>
@@ -40,10 +43,12 @@ const LeftSidebar = () => {
 };
 
 const LeftSidebarWrapper = styled.aside`
+  margin-left: -16rem;
   flex: 0 0 16rem;
   font-size: 0.875rem;
-  background: ${p => p.theme.colors.sidebar};
-  transition: background 0.25s var(--ease-in-out-quad);
+  ${mediaqueries.desktop_up`
+    margin-left: 0;
+  `};
 `;
 
 const LeftSidebarNav = styled.nav`
@@ -55,6 +60,12 @@ const LeftSidebarNav = styled.nav`
   width: 16rem;
   height: 100%;
   padding: 2rem 0;
+  background: ${p => p.theme.colors.sidebar};
+  transition: 0.25s var(--ease-in-out-quad);
+  transform: ${p => (p.navOpen ? `translateX(16rem)` : null)};
+  ${mediaqueries.desktop_up`
+    transform: translateX(0)
+  `};
 `;
 
 const LeftSidebarList = styled.ul`
@@ -67,5 +78,9 @@ const LeftSidebarList = styled.ul`
     border: 0;
   }
 `;
+
+LeftSidebar.propTypes = {
+  navOpen: PropTypes.bool
+};
 
 export default LeftSidebar;

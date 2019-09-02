@@ -8,7 +8,8 @@ export default {
   fonts: {
     body:
       '-apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif',
-    heading: 'Merriweather, Georgia, serif',
+    heading:
+      '-apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif',
     monospace: 'Menlo, monospace'
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],

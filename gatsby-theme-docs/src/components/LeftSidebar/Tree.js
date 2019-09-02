@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import config from '../../../config';
+import { sidebarConfig } from '../../../gatsby-config';
 import TreeNode from './TreeNode';
 
 /**
@@ -7,7 +7,7 @@ import TreeNode from './TreeNode';
  */
 
 const calculateTreeData = edges => {
-  const originalData = config.sidebar.ignoreIndex
+  const originalData = sidebarConfig.ignoreIndex
     ? edges.filter(
         ({
           node: {
@@ -55,9 +55,7 @@ const calculateTreeData = edges => {
     },
     { items: [] }
   );
-  const {
-    sidebar: { forcedNavOrder = [] }
-  } = config;
+  const { forcedNavOrder = [] } = sidebarConfig;
   const tmp = [...forcedNavOrder];
   tmp.reverse();
   return tmp.reduce((accu, slug) => {
@@ -100,14 +98,7 @@ const Tree = ({ edges }) => {
       [url]: !collapsed[url]
     });
   };
-  return (
-    <TreeNode
-      className={`${config.sidebar.frontLine ? 'showFrontLine' : 'hideFrontLine'} firstLevel`}
-      setCollapsed={toggle}
-      collapsed={collapsed}
-      {...treeData}
-    />
-  );
+  return <TreeNode setCollapsed={toggle} collapsed={collapsed} {...treeData} />;
 };
 
 export default Tree;

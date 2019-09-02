@@ -1,6 +1,10 @@
 import { css } from '@emotion/core';
 import theme from '../gatsby-plugin-theme-ui';
 
+/**
+ * This file was inspired by https://github.com/narative/gatsby-theme-novela
+ */
+
 const toEm = size => `${size / 16}em`;
 
 /**

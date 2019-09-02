@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import React from 'react';
-import config from '../../../config';
 import ButtonCollapse from '../ButtonCollapse';
 /**
  * This File was inspired by https://github.com/hasura/gatsby-gitbook-starter
@@ -30,7 +29,7 @@ const TreeNode = ({
         </TreeLink>
       )}
 
-      {!config.sidebar.frontLine && title && hasChildren ? (
+      {title && hasChildren ? (
         <ButtonCollapse onClick={collapse} isCollapsed={isCollapsed} />
       ) : null}
 

@@ -27,6 +27,11 @@ module.exports = {
       }
     ]
   },
+  sidebarConfig: {
+    forcedNavOrder: ['/', '/introduction', '/codeblock'],
+    frontline: false,
+    ignoreIndex: false
+  },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
