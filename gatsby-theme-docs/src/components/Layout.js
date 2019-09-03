@@ -20,7 +20,9 @@ const Layout = ({ children, tableOfContents, location }) => {
           <MobileHeader navOpen={navOpen} setNavOpen={setNavOpen} />
           <SiteContent navOpen={navOpen}>{children}</SiteContent>
         </SiteContentWrapper>
-        <RightSidebar tableOfContents={tableOfContents} location={location} />
+        {tableOfContents.items && (
+          <RightSidebar tableOfContents={tableOfContents} location={location} />
+        )}
       </SiteWrapper>
     </Styled.root>
   );
@@ -48,6 +50,7 @@ const SiteContent = styled.main`
     transform: translateX(0);
     opacity: 1;
     padding: 2rem 3rem 2rem;
+    max-width: 60rem;
   `};
 `;
 

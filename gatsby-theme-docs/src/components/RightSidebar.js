@@ -6,6 +6,9 @@ import ListItem from './ListItem';
 
 const RightSidebar = ({ tableOfContents, location }) => {
   const [listItems] = useState(() => {
+    if (!tableOfContents.items) {
+      return [];
+    }
     const mappedLinks = [];
     function mapLinks(items) {
       items.forEach(item => {
