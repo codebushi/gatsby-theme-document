@@ -1,29 +1,35 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import mediaqueries from '../styles/media';
 import ListItem from './ListItem';
 
-function createItems(items, location) {
-  return (
-    items &&
-    items.map(item => (
-      <li key={location.pathname + item.url} style={{ margin: '0.2rem 0' }}>
-        <ListItem location={location} item={item} />
-        {item.items && <ul>{createItems(item.items, location)}</ul>}
-      </li>
-    ))
-  );
-}
-
 const RightSidebar = ({ tableOfContents, location }) => {
-  const contentLinks = createItems(tableOfContents.items, location);
+  const [listItems] = useState(() => {
+    const mappedLinks = [];
+    function mapLinks(items) {
+      items.forEach(item => {
+        mappedLinks.push(item);
+        if (item.items) {
+          mapLinks(item.items);
+        }
+      });
+    }
+    mapLinks(tableOfContents.items);
+    return mappedLinks;
+  });
 
   return (
     <RightSidebarWrapper>
       <RightSidebarNav>
         <RightSidebarTitle>Contents</RightSidebarTitle>
-        <RightSidebarList>{contentLinks}</RightSidebarList>
+        <RightSidebarList>
+          {listItems.map(item => (
+            <li key={location.pathname + item.url} style={{ margin: '0.2rem, 0' }}>
+              <ListItem location={location} item={item} />
+            </li>
+          ))}
+        </RightSidebarList>
       </RightSidebarNav>
     </RightSidebarWrapper>
   );
@@ -33,6 +39,7 @@ const RightSidebarWrapper = styled.aside`
   display: none;
   flex: 0 0 16rem;
   font-size: 0.75rem;
+  font-weight: 600;
   ${mediaqueries.desktop_medium_up`
     display: block
   `};

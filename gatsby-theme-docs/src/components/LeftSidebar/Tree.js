@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { sidebarConfig } from '../../../gatsby-config';
+import { siteMetadata } from '../../../gatsby-config';
 import TreeNode from './TreeNode';
 
 /**
@@ -7,7 +7,7 @@ import TreeNode from './TreeNode';
  */
 
 const calculateTreeData = edges => {
-  const originalData = sidebarConfig.ignoreIndex
+  const originalData = siteMetadata.sidebarConfig.ignoreIndex
     ? edges.filter(
         ({
           node: {
@@ -55,7 +55,9 @@ const calculateTreeData = edges => {
     },
     { items: [] }
   );
-  const { forcedNavOrder = [] } = sidebarConfig;
+  const {
+    sidebarConfig: { forcedNavOrder = [] }
+  } = siteMetadata;
   const tmp = [...forcedNavOrder];
   tmp.reverse();
   return tmp.reduce((accu, slug) => {

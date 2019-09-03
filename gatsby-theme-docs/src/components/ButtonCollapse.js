@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const ButtonCollapse = ({ onClick, isCollapsed }) => {
-  return <ButtonCollapseStyled onClick={onClick}>{!isCollapsed ? '-' : '+'}</ButtonCollapseStyled>;
+  return <StyledButtonCollapse onClick={onClick}>{!isCollapsed ? '-' : '+'}</StyledButtonCollapse>;
 };
 
-const ButtonCollapseStyled = styled.button`
+const StyledButtonCollapse = styled.button`
   position: absolute;
   top: 0;
   right: 0;

@@ -25,12 +25,12 @@ module.exports = {
         name: `dribbble`,
         url: `https://dribbble.com/narativestudio`
       }
-    ]
-  },
-  sidebarConfig: {
-    forcedNavOrder: ['/', '/introduction', '/codeblock'],
-    frontline: false,
-    ignoreIndex: false
+    ],
+    sidebarConfig: {
+      forcedNavOrder: ['/', '/introduction', '/codeblock'],
+      frontline: false,
+      ignoreIndex: false
+    }
   },
   plugins: [
     {

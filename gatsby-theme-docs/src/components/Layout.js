@@ -16,10 +16,10 @@ const Layout = ({ children, tableOfContents, location }) => {
       <Global styles={globalStyles} />
       <SiteWrapper>
         <LeftSidebar navOpen={navOpen} />
-        <SiteContent navOpen={navOpen}>
+        <SiteContentWrapper>
           <MobileHeader navOpen={navOpen} setNavOpen={setNavOpen} />
-          {children}
-        </SiteContent>
+          <SiteContent navOpen={navOpen}>{children}</SiteContent>
+        </SiteContentWrapper>
         <RightSidebar tableOfContents={tableOfContents} location={location} />
       </SiteWrapper>
     </Styled.root>
@@ -34,16 +34,20 @@ const SiteWrapper = styled.div`
   overflow-x: hidden;
 `;
 
-const SiteContent = styled.main`
+const SiteContentWrapper = styled.main`
   flex-grow: 1;
   min-width: 20rem;
-  padding: 2rem 3rem;
+`;
+
+const SiteContent = styled.main`
+  padding: 0 1rem 2rem;
   transition: 0.25s var(--ease-in-out-quad);
   opacity: ${p => (p.navOpen ? 0.3 : 1)};
   transform: ${p => (p.navOpen ? `translateX(16rem)` : null)};
   ${mediaqueries.desktop_up`
     transform: translateX(0);
     opacity: 1;
+    padding: 2rem 3rem 2rem;
   `};
 `;
 
