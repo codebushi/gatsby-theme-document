@@ -25,9 +25,9 @@ const RightSidebar = ({ tableOfContents, location }) => {
         <RightSidebarTitle>Contents</RightSidebarTitle>
         <RightSidebarList>
           {listItems.map(item => (
-            <li key={location.pathname + item.url} style={{ margin: '0.2rem, 0' }}>
+            <RightSidebarListItem key={location.pathname + item.url}>
               <ListItem location={location} item={item} />
-            </li>
+            </RightSidebarListItem>
           ))}
         </RightSidebarList>
       </RightSidebarNav>
@@ -72,6 +72,10 @@ const RightSidebarList = styled.ul`
     padding: 0;
     list-style: none;
   }
+`;
+
+const RightSidebarListItem = styled.li`
+  margin: 0.3rem 0;
 `;
 
 RightSidebar.propTypes = {
