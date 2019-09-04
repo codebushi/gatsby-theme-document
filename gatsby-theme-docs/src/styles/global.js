@@ -27,6 +27,17 @@ const globalStyles = css`
   body {
     margin: 0;
   }
+
+  /* https://github.com/gatsbyjs/gatsby/issues/15486 */
+  .gatsby-resp-image-image {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 `;
 
 export default globalStyles;

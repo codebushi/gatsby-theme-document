@@ -19,11 +19,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             node {
               fields {
                 id
-              }
-              tableOfContents
-              fields {
                 slug
               }
+              tableOfContents
             }
           }
         }
