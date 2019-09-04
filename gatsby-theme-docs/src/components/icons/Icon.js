@@ -5,7 +5,6 @@ const Icon = ({ icon, size }) => <StyledIcon size={size}>{icon}</StyledIcon>;
 
 const StyledIcon = styled.span`
   display: inline-block;
-  color: #777;
   width: ${p => `${p.size}px`};
   height: ${p => `${p.size}px`};
 `;

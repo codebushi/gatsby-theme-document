@@ -11,7 +11,7 @@ const DocsTemplate = ({ data, location }) => {
   return (
     <Layout tableOfContents={mdx.tableOfContents} location={location}>
       <SEO title={mdx.frontmatter.title} description={mdx.frontmatter.description} />
-      <h1>{mdx.frontmatter.title}</h1>
+      <h1 style={{ marginTop: 0 }}>{mdx.frontmatter.title}</h1>
       <MDXRenderer>{mdx.body}</MDXRenderer>
     </Layout>
   );

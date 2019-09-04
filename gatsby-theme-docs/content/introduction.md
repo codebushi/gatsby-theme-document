@@ -29,6 +29,8 @@ Heading 5 text
 
 Heading 6 text
 
+![Awesome image](./ramen.jpg)
+
 ## Lists
 
 - Item 1

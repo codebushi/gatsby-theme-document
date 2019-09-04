@@ -9,7 +9,7 @@ const MobileHeader = ({ navOpen, setNavOpen }) => {
   return (
     <StyledMobileHeader navOpen={navOpen}>
       <IconButton
-        label="Change Theme Color"
+        label="Open Navigation"
         icon={<Menu />}
         size={30}
         onClick={() => {
@@ -21,7 +21,7 @@ const MobileHeader = ({ navOpen, setNavOpen }) => {
 };
 
 const StyledMobileHeader = styled.div`
-  padding: 1rem 1rem 0;
+  padding: 1rem;
   transition: 0.25s var(--ease-in-out-quad);
   transform: ${p => (p.navOpen ? `translateX(16rem)` : null)};
   ${mediaqueries.desktop_up`

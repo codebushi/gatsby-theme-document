@@ -50,7 +50,7 @@ const SiteContent = styled.main`
     transform: translateX(0);
     opacity: 1;
     padding: 2rem 3rem 2rem;
-    max-width: 60rem;
+    max-width: 50rem;
   `};
 `;
 

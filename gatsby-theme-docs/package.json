@@ -32,7 +32,7 @@
     "gatsby-remark-autolink-headers": "^2.1.9",
     "gatsby-remark-embed-video": "^1.7.1",
     "gatsby-remark-images": "^3.1.20",
-    "gatsby-source-filesystem": "^2.1.18",
+    "gatsby-source-filesystem": "^2.1.19",
     "gatsby-transformer-remark": "^2.6.19",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",

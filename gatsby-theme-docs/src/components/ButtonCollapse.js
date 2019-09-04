@@ -1,9 +1,20 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Add from './icons/Add';
+import Icon from './icons/Icon';
+import Minimize from './icons/Minimize';
 
 const ButtonCollapse = ({ onClick, isCollapsed }) => {
-  return <StyledButtonCollapse onClick={onClick}>{!isCollapsed ? '-' : '+'}</StyledButtonCollapse>;
+  return (
+    <StyledButtonCollapse
+      onClick={onClick}
+      aria-label="Toggle Subnavigation"
+      title="Toggle Subnavigation"
+    >
+      {isCollapsed ? <Icon icon={<Add />} size={24} /> : <Icon icon={<Minimize />} size={24} />}
+    </StyledButtonCollapse>
+  );
 };
 
 const StyledButtonCollapse = styled.button`
