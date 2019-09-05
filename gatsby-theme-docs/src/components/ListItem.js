@@ -13,6 +13,7 @@ const ListItemLink = styled(Link)`
   width: 100%;
   color: ${p => p.theme.colors.text};
   text-decoration: none;
+  transition: color ${p => p.theme.transition};
   &:hover,
   &:focus {
     color: ${p => p.theme.colors.primary};

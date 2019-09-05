@@ -102,14 +102,7 @@ const SEO = ({ title, description, url, image, published, pathname, timeToRead }
     metaTags.push({ name: 'twitter:data1', value: `${timeToRead} min read` });
   }
 
-  return (
-    <Helmet title={pageTitle} htmlAttributes={{ lang: 'en' }} meta={metaTags}>
-      <link
-        href="https://fonts.googleapis.com/css?family=Merriweather:700,700i&display=swap"
-        rel="stylesheet"
-      />
-    </Helmet>
-  );
+  return <Helmet title={pageTitle} htmlAttributes={{ lang: 'en' }} meta={metaTags} />;
 };
 
 SEO.propTypes = {

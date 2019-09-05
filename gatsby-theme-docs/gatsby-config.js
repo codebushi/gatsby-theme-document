@@ -1,3 +1,11 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+const queries = require('./src/utils/algolia');
+
+console.log(process.env.NODE_ENV);
+console.log(process.env);
+
 module.exports = {
   siteMetadata: {
     title: `Docs by Code Bushi`,
@@ -7,28 +15,19 @@ module.exports = {
     social: [
       {
         name: `twitter`,
-        url: `https://twitter.com/narative`
+        url: `https://twitter.com/HuntaroSan`
       },
       {
         name: `github`,
-        url: `https://github.com/narative`
+        url: `https://github.com/codebushi`
       },
       {
-        name: `instagram`,
-        url: `https://instagram.com/narative.co`
-      },
-      {
-        name: `linkedin`,
-        url: `https://www.linkedin.com/company/narative/`
-      },
-      {
-        name: `dribbble`,
-        url: `https://dribbble.com/narativestudio`
+        name: `youtube`,
+        url: `https://www.youtube.com/channel/UCS6lPt9btmTG3GkU82ELygA`
       }
     ],
     sidebarConfig: {
       forcedNavOrder: ['/', '/introduction', '/codeblock'],
-      frontline: false,
       ignoreIndex: false
     }
   },
@@ -59,6 +58,15 @@ module.exports = {
           },
           `gatsby-remark-embed-video`
         ]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        queries,
+        chunkSize: 10000 // default: 1000
       }
     },
     `gatsby-plugin-sharp`,

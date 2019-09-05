@@ -1,7 +1,6 @@
 import { useColorMode } from 'theme-ui';
 
-// const modes = ['light', 'black', 'dark', 'deep', 'hack', 'pink'];
-const modes = ['light', 'dark'];
+const modes = ['light', 'dark', 'cool', 'deep'];
 
 function useCycleColor() {
   const [colorMode, setColorMode] = useColorMode();

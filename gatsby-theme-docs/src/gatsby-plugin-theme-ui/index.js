@@ -2,6 +2,8 @@ import nightOwl from '@theme-ui/prism/presets/night-owl.json';
 import colors from './colors';
 import headings from './headings';
 
+const transition = '0.2s ease-out';
+
 export default {
   initialColorMode: `light`,
   colors,
@@ -35,6 +37,7 @@ export default {
     ['desktop_medium', 1280],
     ['desktop_large', 1440]
   ],
+  transition,
   styles: {
     root: {
       fontFamily: 'body',
@@ -48,8 +51,9 @@ export default {
     },
     a: {
       color: 'secondary',
+      transition: `color ${transition}`,
       ':hover,:focus': {
-        color: 'secondary'
+        color: 'text'
       }
     },
     pre: {

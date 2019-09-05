@@ -9,6 +9,7 @@ const SVG = ({ children, viewBox }) => (
 
 const StyledSVG = styled.svg`
   fill: ${p => p.theme.colors.text};
+  transition: all ${p => p.theme.transition};
   &:hover,
   &:focus {
     fill: ${p => p.theme.colors.primary};
