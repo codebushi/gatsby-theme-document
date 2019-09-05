@@ -73,3 +73,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     });
   }
 };
+
+// For some reason, getting https://github.com/webpack-contrib/css-loader/issues/447
+// When trying to use dotenv in gatsby-config. Adding this fixes it.
+exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) => {
+  actions.setWebpackConfig({
+    node: {
+      fs: 'empty'
+    }
+  });
+};
