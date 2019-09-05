@@ -6,7 +6,13 @@ import useCycleColor from '../../hooks/useCycleColor';
 import mediaqueries from '../../styles/media';
 import ColorToggle from '../icons/ColorToggle';
 import IconButton from '../icons/IconButton';
+import Search from '../Search';
 import Tree from './Tree';
+
+const searchIndices = [
+  { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
+  { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` }
+];
 
 const LeftSidebar = ({ navOpen }) => {
   const { cycleColorMode } = useCycleColor();
@@ -29,6 +35,7 @@ const LeftSidebar = ({ navOpen }) => {
   return (
     <LeftSidebarWrapper>
       <LeftSidebarNav navOpen={navOpen}>
+        <Search collapse indices={searchIndices} />
         <LeftSidebarList>
           <Tree edges={edges} />
         </LeftSidebarList>
