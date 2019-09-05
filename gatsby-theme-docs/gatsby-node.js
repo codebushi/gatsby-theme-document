@@ -1,15 +1,6 @@
 const path = require('path');
 const startCase = require('lodash/startCase');
 
-// Make sure the content directory exists
-// exports.onPreBootstrap = ({ reporter }) => {
-//   const contentPath = `content`;
-//   if (!fs.existsSync(contentPath)) {
-//     reporter.info(`creating the ${contentPath} directory`);
-//     fs.mkdirSync(contentPath);
-//   }
-// };
-
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(
     `
@@ -72,14 +63,4 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: node.frontmatter.title || startCase(parent.name)
     });
   }
-};
-
-// For some reason, getting https://github.com/webpack-contrib/css-loader/issues/447
-// When trying to use dotenv in gatsby-config. Adding this fixes it.
-exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) => {
-  actions.setWebpackConfig({
-    node: {
-      fs: 'empty'
-    }
-  });
 };
