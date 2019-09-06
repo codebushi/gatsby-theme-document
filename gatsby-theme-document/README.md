@@ -8,8 +8,8 @@ https://themes.gohugo.io//theme/hugo-book/docs/with-toc/
 mkdir my-site
 cd my-site
 yarn init
-# install gatsby-theme-docs and it's dependencies
-yarn add gatsby react react-dom gatsby-theme-docs
+# install gatsby-theme-document and it's dependencies
+yarn add gatsby react react-dom gatsby-theme-document
 ```
 
 Then add the theme to your `gatsby-config.js`. We'll use the long form
@@ -19,7 +19,7 @@ here for education purposes.
 module.exports = {
   __experimentalThemes: [
     {
-      resolve: "gatsby-theme-docs",
+      resolve: 'gatsby-theme-document',
       options: {}
     }
   ]
@@ -37,7 +37,7 @@ resources error. Create a simple page in `src/pages/index.js` to see a
 page on the root url.
 
 ```javascript
-import React from "react";
+import React from 'react';
 
 export default () => <div>My Site!</div>;
 ```

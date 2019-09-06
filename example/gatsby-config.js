@@ -1,3 +1,3 @@
 module.exports = {
-  plugins: [{ resolve: `gatsby-theme-docs`, options: {} }]
+  plugins: [{ resolve: `gatsby-theme-document`, options: {} }]
 };

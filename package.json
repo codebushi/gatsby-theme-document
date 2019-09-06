@@ -8,7 +8,7 @@
     "build": "yarn workspace example build"
   },
   "workspaces": [
-    "gatsby-theme-docs",
+    "gatsby-theme-document",
     "example"
   ],
   "devDependencies": {

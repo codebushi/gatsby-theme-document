@@ -18,7 +18,7 @@ yarn workspace example develop
 ```shell
 .
 ├── README.md
-├── gatsby-theme-docs
+├── gatsby-theme-document
 │   ├── README.md
 │   ├── gatsby-config.js
 │   ├── index.js
@@ -34,14 +34,14 @@ yarn workspace example develop
 3 directories, 10 files
 ```
 
-### `gatsby-theme-docs`
+### `gatsby-theme-document`
 
 This directory is the theme package itself. You should rename this at
 some point to be `gatsby-theme-{my-theme-name}`. Also change the
 `package.json` name field and the corresponding dependency in the
 example directory's `package.json`/`gatsby-config.js` to match the chosen name.
 
-- `gatsby-theme-docs/`
+- `gatsby-theme-document/`
   - `gatsby-config.js`: An empty gatsby-config that you can use as a starting point for building functionality into your theme.
   - `index.js`: Since themes also function as plugins, this is an empty file that
     gatsby needs to use this theme as a plugin.
