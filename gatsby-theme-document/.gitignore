@@ -5,3 +5,4 @@ yarn.lock
 package.lock
 .env.production
 .env.development
+.DS_Store
