@@ -1,4 +1,4 @@
-# The smallest possible Gatsby theme
+# A Gatsby theme for writing documentation
 
 https://github.com/codebushi/gatsby-theme-document
 

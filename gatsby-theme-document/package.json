@@ -1,9 +1,19 @@
 {
   "name": "gatsby-theme-document",
+  "author": "Code Bushi",
+  "repository": "https://github.com/codebushi/gatsby-theme-document",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "hunter chang",
   "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-theme",
+    "gatsby-theme-document",
+    "mdx",
+    "theme-ui",
+    "react"
+  ],
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build"
