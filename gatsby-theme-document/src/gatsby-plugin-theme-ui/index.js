@@ -3,15 +3,15 @@ import colors from './colors';
 import headings from './headings';
 
 const transition = '0.2s ease-out';
+const systemFonts =
+  '-apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif';
 
 export default {
   initialColorMode: `light`,
   colors,
   fonts: {
-    body:
-      '-apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif',
-    heading:
-      '-apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif',
+    body: systemFonts,
+    heading: systemFonts,
     monospace: 'Menlo, monospace'
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],

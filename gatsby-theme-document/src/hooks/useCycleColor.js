@@ -1,6 +1,8 @@
 import { useColorMode } from 'theme-ui';
+import colors from '../gatsby-plugin-theme-ui/colors';
 
-const modes = ['light', 'dark', 'cool', 'deep'];
+const customColors = Object.keys(colors.modes);
+const modes = ['light', ...customColors];
 
 function useCycleColor() {
   const [colorMode, setColorMode] = useColorMode();

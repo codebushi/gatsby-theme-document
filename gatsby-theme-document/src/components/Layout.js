@@ -49,7 +49,7 @@ const SiteContent = styled.main`
   ${mediaqueries.desktop_up`
     transform: translateX(0);
     opacity: 1;
-    padding: 2rem 3rem 2rem;
+    padding: 3rem 3rem 3rem;
     max-width: 50rem;
   `};
 `;

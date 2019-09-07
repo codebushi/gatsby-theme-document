@@ -6,7 +6,7 @@ import useCycleColor from '../../hooks/useCycleColor';
 import mediaqueries from '../../styles/media';
 import ColorToggle from '../icons/ColorToggle';
 import IconButton from '../icons/IconButton';
-import Tree from './Tree';
+import Navigation from './Navigation';
 
 const LeftSidebar = ({ navOpen }) => {
   const { cycleColorMode } = useCycleColor();
@@ -29,9 +29,7 @@ const LeftSidebar = ({ navOpen }) => {
   return (
     <LeftSidebarWrapper>
       <LeftSidebarNav navOpen={navOpen}>
-        <LeftSidebarList>
-          <Tree edges={edges} />
-        </LeftSidebarList>
+        <Navigation edges={edges} />
         <p style={{ textAlign: 'center', marginTop: '1.5rem' }}>
           <IconButton
             label="Change Theme Color"
@@ -70,17 +68,6 @@ const LeftSidebarNav = styled.nav`
     transform: translateX(0);
     padding: 2rem 0;
   `};
-`;
-
-const LeftSidebarList = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  > li > ul {
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
 `;
 
 LeftSidebar.propTypes = {
