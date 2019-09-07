@@ -1,6 +1,6 @@
 # The smallest possible Gatsby theme
 
-https://themes.gohugo.io//theme/hugo-book/docs/with-toc/
+https://github.com/codebushi/gatsby-theme-document
 
 ## Quick Start
 
