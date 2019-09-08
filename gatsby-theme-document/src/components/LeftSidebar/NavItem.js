@@ -62,7 +62,7 @@ const NavItemLink = styled(Link)`
 `;
 
 const NavItemChild = styled.ul`
-  margin: 0 0 0 1.2rem;
+  margin: 0.5rem 0 0.5rem 1.2rem;
   padding: 0;
   border-left: 1px solid ${p => p.theme.colors.text};
   list-style: none;
