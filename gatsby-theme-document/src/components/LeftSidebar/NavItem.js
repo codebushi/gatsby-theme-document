@@ -11,7 +11,9 @@ const NavItem = ({ item }) => {
   const hasChildren = item.items && item.items.length > 0;
   return (
     <StyledNavItem>
-      <NavItemLink to={item.url}>{item.title}</NavItemLink>
+      <NavItemLink to={item.url} activeClassName="is-active">
+        {item.title}
+      </NavItemLink>
       {hasChildren && (
         <ButtonCollapse
           onClick={() => {
@@ -24,7 +26,9 @@ const NavItem = ({ item }) => {
         <NavItemChild>
           {item.items.map(child => (
             <StyledNavItem key={child.url}>
-              <NavItemLink to={child.url}>{child.title}</NavItemLink>
+              <NavItemLink to={child.url} activeClassName="is-active">
+                {child.title}
+              </NavItemLink>
             </StyledNavItem>
           ))}
         </NavItemChild>

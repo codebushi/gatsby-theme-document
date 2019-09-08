@@ -6,6 +6,7 @@ import useCycleColor from '../../hooks/useCycleColor';
 import mediaqueries from '../../styles/media';
 import ColorToggle from '../icons/ColorToggle';
 import IconButton from '../icons/IconButton';
+import LogoWrapper from '../LogoWrapper';
 import Navigation from './Navigation';
 
 const LeftSidebar = ({ navOpen }) => {
@@ -29,6 +30,7 @@ const LeftSidebar = ({ navOpen }) => {
   return (
     <LeftSidebarWrapper>
       <LeftSidebarNav navOpen={navOpen}>
+        <LogoWrapper />
         <Navigation edges={edges} />
         <p style={{ textAlign: 'center', marginTop: '1.5rem' }}>
           <IconButton
@@ -66,7 +68,7 @@ const LeftSidebarNav = styled.nav`
   transform: ${p => (p.navOpen ? `translateX(16rem)` : null)};
   ${mediaqueries.desktop_up`
     transform: translateX(0);
-    padding: 2rem 0;
+    padding: 3rem 0;
   `};
 `;
 
