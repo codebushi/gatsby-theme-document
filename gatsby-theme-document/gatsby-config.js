@@ -6,12 +6,12 @@ module.exports = {
     description: `This is my description that will be used in the meta tags and important for search results`,
     social: [
       {
-        name: `twitter`,
-        url: `https://twitter.com/HuntaroSan`
-      },
-      {
         name: `github`,
         url: `https://github.com/codebushi`
+      },
+      {
+        name: `twitter`,
+        url: `https://twitter.com/HuntaroSan`
       }
     ],
     sidebarConfig: {
