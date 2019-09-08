@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
+import { graphql, useStaticQuery } from 'gatsby';
 import React, { useState } from 'react';
-import { siteMetadata } from '../../../gatsby-config';
 import NavItem from './NavItem';
 
 /**
  * This File was inspired by https://github.com/hasura/gatsby-gitbook-starter
  */
 
-const calculateTreeData = edges => {
-  const originalData = siteMetadata.sidebarConfig.ignoreIndex
+const calculateTreeData = (edges, sidebarConfig) => {
+  const originalData = sidebarConfig.ignoreIndex
     ? edges.filter(
         ({
           node: {
@@ -56,9 +56,7 @@ const calculateTreeData = edges => {
     },
     { items: [] }
   );
-  const {
-    sidebarConfig: { forcedNavOrder = [] }
-  } = siteMetadata;
+  const forcedNavOrder = sidebarConfig.forcedNavOrder || [];
   const tmp = [...forcedNavOrder];
   tmp.reverse();
   return tmp.reduce((accu, slug) => {
@@ -90,9 +88,37 @@ const calculateTreeData = edges => {
   }, tree);
 };
 
-const Navigation = ({ edges }) => {
+const Navigation = () => {
+  const result = useStaticQuery(graphql`
+    query {
+      allSite {
+        edges {
+          node {
+            siteMetadata {
+              sidebarConfig {
+                forcedNavOrder
+                ignoreIndex
+              }
+            }
+          }
+        }
+      }
+      allMdx {
+        edges {
+          node {
+            fields {
+              slug
+              title
+            }
+          }
+        }
+      }
+    }
+  `);
+  const { allSite, allMdx } = result;
+  const { sidebarConfig } = allSite.edges[0].node.siteMetadata;
   const [treeData] = useState(() => {
-    return calculateTreeData(edges);
+    return calculateTreeData(allMdx.edges, sidebarConfig);
   });
   return (
     <NavList>

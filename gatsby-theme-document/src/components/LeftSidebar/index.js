@@ -1,31 +1,14 @@
 import styled from '@emotion/styled';
-import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import mediaqueries from '../../styles/media';
 import Navigation from './Navigation';
 
 const LeftSidebar = ({ navOpen }) => {
-  const {
-    allMdx: { edges }
-  } = useStaticQuery(graphql`
-    query {
-      allMdx {
-        edges {
-          node {
-            fields {
-              slug
-              title
-            }
-          }
-        }
-      }
-    }
-  `);
   return (
     <LeftSidebarWrapper>
       <LeftSidebarNav navOpen={navOpen}>
-        <Navigation edges={edges} />
+        <Navigation />
       </LeftSidebarNav>
     </LeftSidebarWrapper>
   );
