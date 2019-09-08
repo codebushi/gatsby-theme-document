@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import PropTypes from 'prop-types';
@@ -11,11 +12,19 @@ const DocsTemplate = ({ data, location }) => {
   return (
     <Layout tableOfContents={mdx.tableOfContents} location={location}>
       <SEO title={mdx.frontmatter.title} description={mdx.frontmatter.description} />
-      <h1 style={{ marginTop: 0 }}>{mdx.frontmatter.title}</h1>
+      <Heading>{mdx.frontmatter.title}</Heading>
       <MDXRenderer>{mdx.body}</MDXRenderer>
     </Layout>
   );
 };
+
+const Heading = styled.h1`
+  padding-top: 0;
+  margin-top: 0;
+  &::before {
+    display: none !important;
+  }
+`;
 
 DocsTemplate.propTypes = {
   data: PropTypes.shape({

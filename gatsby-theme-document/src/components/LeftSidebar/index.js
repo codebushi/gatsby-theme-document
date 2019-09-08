@@ -2,15 +2,10 @@ import styled from '@emotion/styled';
 import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import useCycleColor from '../../hooks/useCycleColor';
 import mediaqueries from '../../styles/media';
-import ColorToggle from '../icons/ColorToggle';
-import IconButton from '../icons/IconButton';
-import LogoWrapper from '../LogoWrapper';
 import Navigation from './Navigation';
 
 const LeftSidebar = ({ navOpen }) => {
-  const { cycleColorMode } = useCycleColor();
   const {
     allMdx: { edges }
   } = useStaticQuery(graphql`
@@ -30,16 +25,7 @@ const LeftSidebar = ({ navOpen }) => {
   return (
     <LeftSidebarWrapper>
       <LeftSidebarNav navOpen={navOpen}>
-        <LogoWrapper />
         <Navigation edges={edges} />
-        <p style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-          <IconButton
-            label="Change Theme Color"
-            icon={<ColorToggle />}
-            size={30}
-            onClick={cycleColorMode}
-          />
-        </p>
       </LeftSidebarNav>
     </LeftSidebarWrapper>
   );
@@ -68,7 +54,7 @@ const LeftSidebarNav = styled.nav`
   transform: ${p => (p.navOpen ? `translateX(16rem)` : null)};
   ${mediaqueries.desktop_up`
     transform: translateX(0);
-    padding: 3rem 0;
+    padding: 6.6rem 0 1rem;
   `};
 `;
 

@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 import { Styled } from 'theme-ui';
 import { globalStyles } from '../styles';
 import mediaqueries from '../styles/media';
+import Header from './Header';
 import LeftSidebar from './LeftSidebar';
-import MobileHeader from './MobileHeader';
 import RightSidebar from './RightSidebar';
 
 const Layout = ({ children, tableOfContents, location }) => {
@@ -14,10 +14,10 @@ const Layout = ({ children, tableOfContents, location }) => {
   return (
     <Styled.root>
       <Global styles={globalStyles} />
+      <Header navOpen={navOpen} setNavOpen={setNavOpen} />
       <SiteWrapper>
         <LeftSidebar navOpen={navOpen} />
         <SiteContentWrapper>
-          <MobileHeader navOpen={navOpen} setNavOpen={setNavOpen} />
           <SiteContent navOpen={navOpen}>{children}</SiteContent>
         </SiteContentWrapper>
         {tableOfContents.items && (
@@ -30,26 +30,26 @@ const Layout = ({ children, tableOfContents, location }) => {
 
 const SiteWrapper = styled.div`
   display: flex;
-  background: ${p => p.theme.colors.background};
-  transition: background 0.25s var(--ease-in-out-quad);
   min-height: 100vh;
   overflow-x: hidden;
+  background: ${p => p.theme.colors.background};
+  transition: background 0.25s var(--ease-in-out-quad);
 `;
 
-const SiteContentWrapper = styled.main`
+const SiteContentWrapper = styled.div`
   flex-grow: 1;
   min-width: 20rem;
 `;
 
 const SiteContent = styled.main`
-  padding: 0 1rem 2rem;
+  padding: 2rem 1rem 2rem;
   transition: 0.25s var(--ease-in-out-quad);
   opacity: ${p => (p.navOpen ? 0.3 : 1)};
   transform: ${p => (p.navOpen ? `translateX(16rem)` : null)};
   ${mediaqueries.desktop_up`
     transform: translateX(0);
     opacity: 1;
-    padding: 3rem 3rem 3rem;
+    padding: 7rem 3rem 3rem;
     max-width: 50rem;
   `};
 `;

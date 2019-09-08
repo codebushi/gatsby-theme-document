@@ -2,8 +2,16 @@ const headingBase = {
   fontFamily: 'heading',
   lineHeight: 'heading',
   fontWeight: 'heading',
-  mt: 4,
-  mb: 3
+  mt: 0,
+  mb: 3,
+  '::before': {
+    content: '" "',
+    display: 'block',
+    paddingTop: 30,
+    marginBottom: 40,
+    borderBottom: '1px solid',
+    borderBottomColor: 'borderColor'
+  }
 };
 
 export default {
