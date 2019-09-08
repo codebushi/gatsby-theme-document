@@ -12,10 +12,6 @@ module.exports = {
       {
         name: `github`,
         url: `https://github.com/codebushi`
-      },
-      {
-        name: `youtube`,
-        url: `https://www.youtube.com/channel/UCS6lPt9btmTG3GkU82ELygA`
       }
     ],
     sidebarConfig: {

@@ -7,12 +7,13 @@ import ColorToggle from './icons/ColorToggle';
 import IconButton from './icons/IconButton';
 import Menu from './icons/Menu';
 import LogoWrapper from './LogoWrapper';
+import SocialIcons from './SocialIcons';
 
 const Header = ({ navOpen, setNavOpen }) => {
   const { cycleColorMode } = useCycleColor();
   return (
     <StyledHeader navOpen={navOpen}>
-      <HeaderLeft>
+      <HeaderSection>
         <NavIconButton>
           <IconButton
             label="Open Navigation"
@@ -24,15 +25,16 @@ const Header = ({ navOpen, setNavOpen }) => {
           />
         </NavIconButton>
         <LogoWrapper />
-      </HeaderLeft>
-      <div>
+      </HeaderSection>
+      <HeaderSection>
+        <SocialIcons />
         <IconButton
           label="Change Theme Color"
           icon={<ColorToggle />}
           size={30}
           onClick={cycleColorMode}
         />
-      </div>
+      </HeaderSection>
     </StyledHeader>
   );
 };
@@ -66,7 +68,7 @@ const NavIconButton = styled.div`
   `};
 `;
 
-const HeaderLeft = styled.div`
+const HeaderSection = styled.div`
   display: flex;
   align-items: center;
 `;
