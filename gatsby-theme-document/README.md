@@ -1,3 +1,5 @@
+# Gatsby Theme Document
+
 Welcome to Document, a Gatsby.js theme by [Code Bushi](https://codebushi.com). Quickly and easily create documentation for anything using MDX or Markdown.
 
 👀 [View the Live Demo](https://codebushi.com)
