@@ -4,13 +4,13 @@ import React, { useContext } from 'react';
 import { GlobalDispatchContext, GlobalStateContext } from '../../context/GlobalContextProvider';
 import ButtonCollapse from '../ButtonCollapse';
 
-const NavItem = ({ item, collapsed, setCollapsed }) => {
+const NavItem = ({ item }) => {
   const state = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
   const isCollapsed = state.collapsed[item.url];
   const hasChildren = item.items && item.items.length > 0;
   return (
-    <StyledNavItem className={isCollapsed ? 'ge' : 'no'}>
+    <StyledNavItem>
       <NavItemLink to={item.url}>{item.title}</NavItemLink>
       {hasChildren && (
         <ButtonCollapse

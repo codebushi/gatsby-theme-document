@@ -1,15 +1,15 @@
 export default {
   text: '#000',
   background: '#fff',
-  secondary: 'hsl(217, 71%, 53%)',
   primary: '#e63b19',
+  secondary: '#f3970a',
   sidebar: '#eee',
   modes: {
     dark: {
       text: '#fff',
       background: '#182952',
       primary: '#e14594',
-      secondary: '#7045af',
+      secondary: '#975dea',
       sidebar: '#101d3c'
     },
     cool: {
