@@ -2,14 +2,14 @@
 
 Welcome to Document, a Gatsby.js theme by [Code Bushi](https://codebushi.com). Quickly and easily create documentation for anything using MDX or Markdown.
 
-👀 [View the Live Demo](https://codebushi.com)
+👀 [View the Live Demo](https://gatsby-theme-document.surge.sh/)
 
 ## Getting Started
 
 Using the Gatsby CLI
 
 ```bash
-gatsby new document-site https://github.com/codebushi/gatsby-starter-dimension.git
+gatsby new document-site https://github.com/codebushi/gatsby-theme-document-example
 cd document-site
 gatsby develop
 ```

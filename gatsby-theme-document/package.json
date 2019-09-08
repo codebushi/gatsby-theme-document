@@ -19,12 +19,12 @@
     "build": "gatsby build"
   },
   "peerDependencies": {
-    "gatsby": "^2.13.82",
+    "gatsby": "^2.15.9",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
-    "gatsby": "^2.13.82",
+    "gatsby": "^2.15.9",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
