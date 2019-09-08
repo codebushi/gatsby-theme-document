@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
+import siteImage from '../site-image.jpg';
 
 /**
  * This react helmt code is adapted from
@@ -43,7 +44,7 @@ const seoQuery = graphql`
   }
 `;
 
-const SEO = ({ title, description, url, image, pathname }) => {
+const SEO = ({ title, description, url, pathname }) => {
   const results = useStaticQuery(seoQuery);
   const site = results.allSite.edges[0].node.siteMetadata;
   const twitter = site.social.find(option => option.name === 'twitter') || {};
@@ -70,7 +71,7 @@ const SEO = ({ title, description, url, image, pathname }) => {
     },
     { itemprop: 'name', content: pageTitle },
     { itemprop: 'description', content: pageDescription },
-    { itemprop: 'image', content: fullURL(image) },
+    { itemprop: 'image', content: fullURL(siteImage) },
     { name: 'description', content: pageDescription },
 
     { name: 'twitter:card', content: 'summary_large_image' },
@@ -80,12 +81,12 @@ const SEO = ({ title, description, url, image, pathname }) => {
     { name: 'twitter:creator', content: twitter.url },
     {
       name: 'twitter:image',
-      content: fullURL(image)
+      content: fullURL(siteImage)
     },
 
     { property: 'og:title', content: pageTitle },
     { property: 'og:url', content: url },
-    { property: 'og:image', content: fullURL(image) },
+    { property: 'og:image', content: fullURL(siteImage) },
     { property: 'og:description', content: pageDescription },
     { property: 'og:site_name', content: site.siteName }
   ];
@@ -97,7 +98,6 @@ SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   url: PropTypes.string,
-  image: PropTypes.string,
   pathname: PropTypes.string
 };
 
@@ -105,7 +105,6 @@ SEO.defaultProps = {
   title: '',
   description: '',
   url: '',
-  image: '',
   pathname: ''
 };
 

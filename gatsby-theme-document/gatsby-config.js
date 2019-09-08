@@ -15,8 +15,8 @@ module.exports = {
       }
     ],
     sidebarConfig: {
-      forcedNavOrder: ['/introduction', '/codeblock'],
-      ignoreIndex: true
+      forcedNavOrder: [],
+      ignoreIndex: false
     }
   },
   plugins: [
