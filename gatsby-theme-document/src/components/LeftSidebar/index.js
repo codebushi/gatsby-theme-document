@@ -74,4 +74,4 @@ LeftSidebar.propTypes = {
   navOpen: PropTypes.bool
 };
 
-export default LeftSidebar;
+export default React.memo(LeftSidebar);

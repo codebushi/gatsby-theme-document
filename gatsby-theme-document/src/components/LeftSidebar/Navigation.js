@@ -94,17 +94,10 @@ const Navigation = ({ edges }) => {
   const [treeData] = useState(() => {
     return calculateTreeData(edges);
   });
-  const [collapsed, setCollapsed] = useState({});
-  const toggleCollapsed = url => {
-    setCollapsed({
-      ...collapsed,
-      [url]: !collapsed[url]
-    });
-  };
   return (
     <NavList>
       {treeData.items.map(item => (
-        <NavItem key={item.url} item={item} collapsed={collapsed} setCollapsed={toggleCollapsed} />
+        <NavItem key={item.url} item={item} />
       ))}
     </NavList>
   );
@@ -116,4 +109,4 @@ const NavList = styled.ul`
   list-style: none;
 `;
 
-export default Navigation;
+export default React.memo(Navigation);

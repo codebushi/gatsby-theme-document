@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Styled } from 'theme-ui';
+import { GlobalStateContext } from '../context/GlobalContextProvider';
 import { globalStyles } from '../styles';
 import mediaqueries from '../styles/media';
 import LeftSidebar from './LeftSidebar';
@@ -12,19 +13,25 @@ import RightSidebar from './RightSidebar';
 const Layout = ({ children, tableOfContents, location }) => {
   const [navOpen, setNavOpen] = useState(false);
   return (
-    <Styled.root>
-      <Global styles={globalStyles} />
-      <SiteWrapper>
-        <LeftSidebar navOpen={navOpen} />
-        <SiteContentWrapper>
-          <MobileHeader navOpen={navOpen} setNavOpen={setNavOpen} />
-          <SiteContent navOpen={navOpen}>{children}</SiteContent>
-        </SiteContentWrapper>
-        {tableOfContents.items && (
-          <RightSidebar tableOfContents={tableOfContents} location={location} />
-        )}
-      </SiteWrapper>
-    </Styled.root>
+    <GlobalStateContext.Consumer>
+      {() => {
+        return (
+          <Styled.root>
+            <Global styles={globalStyles} />
+            <SiteWrapper>
+              <LeftSidebar navOpen={navOpen} />
+              <SiteContentWrapper>
+                <MobileHeader navOpen={navOpen} setNavOpen={setNavOpen} />
+                <SiteContent navOpen={navOpen}>{children}</SiteContent>
+              </SiteContentWrapper>
+              {tableOfContents.items && (
+                <RightSidebar tableOfContents={tableOfContents} location={location} />
+              )}
+            </SiteWrapper>
+          </Styled.root>
+        );
+      }}
+    </GlobalStateContext.Consumer>
   );
 };
 

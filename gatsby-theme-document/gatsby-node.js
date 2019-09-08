@@ -1,4 +1,3 @@
-const path = require('path');
 const startCase = require('lodash/startCase');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {

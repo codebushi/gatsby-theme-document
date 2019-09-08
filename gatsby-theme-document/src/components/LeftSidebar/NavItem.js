@@ -1,18 +1,21 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalDispatchContext, GlobalStateContext } from '../../context/GlobalContextProvider';
 import ButtonCollapse from '../ButtonCollapse';
 
 const NavItem = ({ item, collapsed, setCollapsed }) => {
-  const isCollapsed = collapsed[item.url];
+  const state = useContext(GlobalStateContext);
+  const dispatch = useContext(GlobalDispatchContext);
+  const isCollapsed = state.collapsed[item.url];
   const hasChildren = item.items && item.items.length > 0;
   return (
-    <StyledNavItem>
+    <StyledNavItem className={isCollapsed ? 'ge' : 'no'}>
       <NavItemLink to={item.url}>{item.title}</NavItemLink>
       {hasChildren && (
         <ButtonCollapse
           onClick={() => {
-            setCollapsed(item.url);
+            dispatch({ type: 'TOGGLE_NAV_COLLAPSED', url: item.url });
           }}
           isCollapsed={isCollapsed}
         />
@@ -64,4 +67,4 @@ const NavItemChild = styled.ul`
   }
 `;
 
-export default NavItem;
+export default React.memo(NavItem);
