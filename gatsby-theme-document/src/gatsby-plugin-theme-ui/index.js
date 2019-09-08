@@ -14,7 +14,7 @@ export default {
     heading: systemFonts,
     monospace: 'Menlo, monospace'
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
+  fontSizes: [12, 14, 16, 24, 28, 36, 48, 64],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -69,7 +69,7 @@ export default {
     },
     inlineCode: {
       color: `primary`,
-      background: `rgba(233, 218, 172, 0.2)`,
+      background: `rgba(233, 218, 172, 0.15)`,
       borderRadius: 3,
       px: `0.4rem`,
       py: `0.2rem`

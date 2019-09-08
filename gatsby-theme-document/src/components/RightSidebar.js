@@ -56,7 +56,7 @@ const RightSidebarNav = styled.nav`
   overflow-y: auto;
   width: 16rem;
   height: 100%;
-  padding: 6.6rem 1rem 0;
+  padding: 7rem 1rem 0;
 `;
 
 const RightSidebarTitle = styled.p`

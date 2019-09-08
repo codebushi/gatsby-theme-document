@@ -3,23 +3,14 @@ title: 'Sub Page 2'
 description: 'This is the meta description for this page'
 ---
 
-The following is a code block with JavaScript language syntax highlighting.
+Sub Pages are created by making a new folder that is the same name as the parent file.
 
-```javascript
-import React from 'react';
-```
-
-Supports multiple languages.
-
-The following is a code block with diff. Lines with `+` highlighted in green shade indicating an addition. Lines with `-` highlighted in red shade indicating a deletion.
-
-```javascript
-- const data = ['1','2'];
-+ const data = [1,2];
-```
-
-example
-
-```javascript react-live=true
-<button className={'btn btn-default'}>Change my text</button>
+```bash
+root
+└── content
+  ├── index.mdx #homepage "/"
+  ├── codeblock.mdx #codeblock "/codeblock"
+  └── codeblock
+    └── subpage.mdx #subpage under codeblock "/codeblock/subpage"
+    └── subpage-2.mdx #subpage under codeblock "/codeblock/subpage-2"
 ```

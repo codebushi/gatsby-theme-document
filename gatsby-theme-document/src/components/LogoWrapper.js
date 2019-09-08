@@ -14,7 +14,7 @@ const LogoWrapper = () => (
 const StyledLogoWrapper = styled.div`
   p {
     margin: 0;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 `;
 
