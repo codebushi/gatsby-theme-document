@@ -27,18 +27,8 @@ DocsTemplate.propTypes = {
 export const pageQuery = graphql`
   query($id: String!) {
     mdx(fields: { id: { eq: $id } }) {
-      fields {
-        id
-        title
-        slug
-      }
       body
       tableOfContents
-      parent {
-        ... on File {
-          relativePath
-        }
-      }
       frontmatter {
         title
         description

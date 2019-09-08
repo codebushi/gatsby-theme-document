@@ -28,13 +28,14 @@ const seoQuery = graphql`
       edges {
         node {
           siteMetadata {
+            title
+            name
+            siteUrl
             description
             social {
               name
               url
             }
-            siteUrl
-            title
           }
         }
       }
@@ -42,7 +43,7 @@ const seoQuery = graphql`
   }
 `;
 
-const SEO = ({ title, description, url, image, published, pathname, timeToRead }) => {
+const SEO = ({ title, description, url, image, pathname }) => {
   const results = useStaticQuery(seoQuery);
   const site = results.allSite.edges[0].node.siteMetadata;
   const twitter = site.social.find(option => option.name === 'twitter') || {};
@@ -64,10 +65,6 @@ const SEO = ({ title, description, url, image, published, pathname, timeToRead }
       content: 'width=device-width, initial-scale=1'
     },
     {
-      name: 'theme-color',
-      content: '#fff'
-    },
-    {
       rel: 'canonical',
       href: fullURL(pathname)
     },
@@ -77,7 +74,7 @@ const SEO = ({ title, description, url, image, published, pathname, timeToRead }
     { name: 'description', content: pageDescription },
 
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: site.name },
+    { name: 'twitter:site', content: site.siteName },
     { name: 'twitter:title', content: pageTitle },
     { name: 'twitter:description', content: pageDescription },
     { name: 'twitter:creator', content: twitter.url },
@@ -90,17 +87,8 @@ const SEO = ({ title, description, url, image, published, pathname, timeToRead }
     { property: 'og:url', content: url },
     { property: 'og:image', content: fullURL(image) },
     { property: 'og:description', content: pageDescription },
-    { property: 'og:site_name', content: site.name }
+    { property: 'og:site_name', content: site.siteName }
   ];
-
-  if (published) {
-    metaTags.push({ name: 'article:published_time', content: published });
-  }
-
-  if (timeToRead) {
-    metaTags.push({ name: 'twitter:label1', value: 'Reading time' });
-    metaTags.push({ name: 'twitter:data1', value: `${timeToRead} min read` });
-  }
 
   return <Helmet title={pageTitle} htmlAttributes={{ lang: 'en' }} meta={metaTags} />;
 };
@@ -110,9 +98,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   url: PropTypes.string,
   image: PropTypes.string,
-  published: PropTypes.string,
-  pathname: PropTypes.string,
-  timeToRead: PropTypes.string
+  pathname: PropTypes.string
 };
 
 SEO.defaultProps = {
@@ -120,9 +106,7 @@ SEO.defaultProps = {
   description: '',
   url: '',
   image: '',
-  published: null,
-  pathname: '',
-  timeToRead: null
+  pathname: ''
 };
 
 export default SEO;
