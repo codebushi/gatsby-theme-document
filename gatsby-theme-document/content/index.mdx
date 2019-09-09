@@ -66,3 +66,16 @@ The code blocks will not change color based on the color modes. For a complete l
 ## Social Media Icons
 
 The social media icons in the header can be edited in the `gatsby-config.js` file, under social. Currently, you can only add Twitter and Github links.
+
+## SEO, Site Image, and Manifest Icons
+
+Document uses React Helmet to add meta tags to the website's `<head>` tag. When adding/editing a file in the content folder, be sure to include the Title and Description in the frontmatter. These are automatically used to generate the title and description meta tags for the page.
+
+```md
+---
+title: 'Document by Code Bushi'
+description: 'This is the meta description'
+---
+```
+
+There is also an image at `src/site-image.jpg` which is used for the Open Graph image tag, as well as the Twitter card. Another image at `src/site-icon.png` is used by the [gatsby-plugin-manifest](https://www.gatsbyjs.org/packages/gatsby-plugin-manifest/) to generate a Favicon and other device icons.
