@@ -15,7 +15,7 @@ module.exports = {
       }
     ],
     sidebarConfig: {
-      forcedNavOrder: [],
+      forcedNavOrder: ['/'],
       ignoreIndex: false
     }
   },
@@ -46,6 +46,18 @@ module.exports = {
           },
           `gatsby-remark-embed-video`
         ]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Document`,
+        short_name: `Document`,
+        start_url: `/`,
+        background_color: `#182952`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: 'src/site-icon.png'
       }
     },
     `gatsby-plugin-sharp`,
