@@ -17,6 +17,11 @@ const calculateTreeData = (edges, sidebarConfig) => {
         }) => slug !== '/'
       )
     : edges;
+
+  if (originalData.length === 0) {
+    return { items: [] };
+  }
+
   const tree = originalData.reduce(
     (
       accu,
