@@ -4,32 +4,33 @@ import React, { useContext } from 'react';
 import { GlobalDispatchContext, GlobalStateContext } from '../../context/GlobalContextProvider';
 import ButtonCollapse from '../ButtonCollapse';
 
-const NavItem = ({ item }) => {
+const NavItem = ({ items, url = '', title = '' }) => {
   const state = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
-  const isCollapsed = state.collapsed[item.url];
-  const hasChildren = item.items && item.items.length > 0;
+  const isCollapsed = state.collapsed[url];
+  const hasChildren = items && items.length > 0;
   return (
     <StyledNavItem>
-      <NavItemLink to={item.url} activeClassName="is-active">
-        {item.title}
+      {title !== '' && (
+      <NavItemLink to={url} activeClassName="is-active">
+        {title}
       </NavItemLink>
-      {hasChildren && (
+      )}
+      {hasChildren && title !== '' && (
         <ButtonCollapse
           onClick={() => {
-            dispatch({ type: 'TOGGLE_NAV_COLLAPSED', url: item.url });
+            dispatch({ type: 'TOGGLE_NAV_COLLAPSED', url: url });
           }}
           isCollapsed={isCollapsed}
         />
       )}
       {hasChildren && !isCollapsed && (
         <NavItemChild>
-          {item.items.map(child => (
-            <StyledNavItem key={child.url}>
-              <NavItemLink to={child.url} activeClassName="is-active">
-                {child.title}
-              </NavItemLink>
-            </StyledNavItem>
+          {items.map(item => (
+            <NavItem
+              key={item.url}
+              {...item}
+              />
           ))}
         </NavItemChild>
       )}
