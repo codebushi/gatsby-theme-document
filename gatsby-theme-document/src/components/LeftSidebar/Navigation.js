@@ -127,9 +127,7 @@ const Navigation = () => {
   });
   return (
     <NavList>
-      {treeData.items.map(item => (
-        <NavItem key={item.url} item={item} />
-      ))}
+      <NavItem {...treeData} />
     </NavList>
   );
 };
